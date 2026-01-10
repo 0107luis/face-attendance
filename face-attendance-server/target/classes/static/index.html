@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>人脸识别考勤系统</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="css/index.css?v=3.1.0">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- 侧边导航栏 -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">FR</div>
+                <div class="app-name">人脸识别考勤系统</div>
+            </div>
+            <div class="sidebar-menu">
+                <div class="menu-item" data-target="permission">
+                    <i>🔐</i>
+                    <span class="menu-text">权限管理</span>
+                </div>
+                <div class="submenu">
+                    <div class="submenu-item" data-target="permission-assign">角色权限分配</div>
+                </div>
+                <div class="menu-item active" data-target="dashboard">
+                    <i>📊</i>
+                    <span class="menu-text">仪表板</span>
+                </div>
+                <div class="menu-item" data-target="basic-info">
+                    <i>📚</i>
+                    <span class="menu-text">基础信息管理</span>
+                </div>
+                <div class="submenu">
+                    <div class="submenu-item" data-target="user-management">用户信息管理</div>
+                    <div class="submenu-item" data-target="role-management">角色信息管理</div>
+                    <div class="submenu-item" data-target="teacher-management">教师信息管理</div>
+                    <div class="submenu-item" data-target="student-management">学生信息管理</div>
+                    <div class="submenu-item" data-target="course-management">课程信息管理</div>
+                    <div class="submenu-item" data-target="admin-student-courses">学生选课查看</div>
+                </div>
+                <div class="menu-item" data-target="business">
+                    <i>📱</i>
+                    <span class="menu-text">业务子系统</span>
+                </div>
+                <div class="submenu">
+                    <div class="submenu-item" data-target="publish-task">发布考勤</div>
+                    <div class="submenu-item" data-target="statistics">考勤统计</div>
+                    <div class="submenu-item" data-target="face-data-entry">人脸数据录入</div>
+                    <div class="submenu-item" data-target="face-test">人脸识别测试</div>
+                    <div class="submenu-item" data-target="course-selection">学生选课</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 主内容区 -->
+        <div class="main-content">
+            <!-- 顶部栏 -->
+            <div class="topbar">
+                <div class="page-title">仪表板</div>
+                <div class="user-info">
+                    <div class="user-avatar">张</div>
+                    <div class="user-name">张老师</div>
+                </div>
+            </div>
+
+            <!-- 内容区域 -->
+            <div class="content-area">
+                <!-- 仪表板页面 -->
+                <div id="dashboard" class="page active">
+                    <div class="dashboard-stats">
+                        <div class="stat-card">
+                            <div class="stat-icon" style="background: var(--primary-color);">👨‍🎓</div>
+                            <div class="stat-info">
+                                <h3 id="stat-student-count">-</h3>
+                                <p>学生总数</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon" style="background: var(--accent-color);">👨‍🏫</div>
+                            <div class="stat-info">
+                                <h3 id="stat-teacher-count">-</h3>
+                                <p>教师总数</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon" style="background: var(--success-color);">📚</div>
+                            <div class="stat-info">
+                                <h3 id="stat-course-count">-</h3>
+                                <p>课程总数</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon" style="background: var(--warning-color);">✅</div>
+                            <div class="stat-info">
+                                <h3 id="stat-attendance-rate">-</h3>
+                                <p>今日出勤率</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">最近考勤记录</div>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-container">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>课程名称</th>
+                                            <th>班级</th>
+                                            <th>时间</th>
+                                            <th>应到/实到</th>
+                                            <th>出勤率</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="recent-records-tbody">
+                                        <tr>
+                                            <td colspan="5" style="text-align: center;">加载中...</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 其他页面内容将在这里动态加载 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 通用模态框 -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modal-title">标题</h2>
+                <button class="modal-close" id="modal-close">×</button>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <!-- 动态内容 -->
+            </div>
+            <div class="modal-footer" id="modal-footer">
+                <button class="btn btn-secondary" id="modal-cancel">取消</button>
+                <button class="btn btn-accent" id="modal-submit">确定</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast 提示容器 -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <script src="https://webapi.amap.com/loader.js"></script>
+    <script src="js/generator.js?v=1.0.2"></script>
+    <script src="js/api.js?v=3.4.6"></script>
+    <script src="js/amap.js?v=1.0.2"></script>
+    <script src="js/main.js?v=4.1.3"></script>
+</body>
+
+</html>

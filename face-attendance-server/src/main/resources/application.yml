@@ -1,79 +1,73 @@
-server:
-  port: 8085
-  servlet:
-    context-path: /api
-
 spring:
   application:
-    name: face-attendance-server
-
-  mvc:
-    pathmatch:
-      matching-strategy: ant_path_matcher
-
+    name: facial-recognition-attendance
+  
+  # 数据源配置
   datasource:
+    url: jdbc:mysql://localhost:3306/facial_recognition?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+    username: root
+    password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/face_attendance?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
-    username: root
-    password: 123456
-    hikari:
-      minimum-idle: 5
-      maximum-pool-size: 20
-      connection-timeout: 30000
-      idle-timeout: 600000
-      max-lifetime: 1800000
-      
-  data:
-    redis:
-      host: localhost
-      port: 6379
-      database: 0
-      timeout: 10000
-      lettuce:
-        pool:
-          max-active: 8
-          max-wait: -1
-          max-idle: 8
-          min-idle: 0
-          
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: root
-    password: 123456
-    virtual-host: /
-    publisher-confirm-type: correlated
-    publisher-returns: true
-    listener:
-      simple:
-        acknowledge-mode: manual
-        prefetch: 10
+    
+  # 连接池配置
+  hikari:
+    minimum-idle: 5
+    maximum-pool-size: 20
+    connection-timeout: 30000
+    idle-timeout: 600000
+    max-lifetime: 1800000
 
-mybatis-plus:
+  # JPA 配置
+  jpa:
+    hibernate:
+      naming:
+        # 使用自定义命名策略，保持表名和列名大小写不变，与数据库中的实际名称一致
+        physical-strategy: com.facial.recognition.config.CustomPhysicalNamingStrategy
+        # 禁用自动命名转换，保持@Table和@Column中指定的名称
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+    show-sql: true
+    properties:
+      hibernate:
+        # 格式化SQL输出
+        format_sql: true
+        # 确保表名和列名大小写敏感（MySQL需要）
+        globally_quoted_identifiers: true
+  
+  # DevTools 配置 - 开发工具热重载
+  devtools:
+    restart:
+      enabled: true  # 启用自动重启
+      # 排除不需要重启的资源（静态资源等）
+      exclude: static/**,public/**,templates/**,META-INF/maven/**,META-INF/resources/**
+      # 添加需要监控的额外路径
+      additional-paths: src/main/java
+    livereload:
+      enabled: true  # 启用LiveReload（浏览器自动刷新）
+      port: 35729    # LiveReload服务器端口
+
+# MyBatis配置
+mybatis:
+  # 实体类所在包
+  type-aliases-package: com.example.demo.entity
+  # Mapper XML文件位置
   mapper-locations: classpath:mapper/*.xml
-  type-aliases-package: com.attendance.entity
-  global-config:
-    db-config:
-      id-type: auto
-      logic-delete-field: deleted
-      logic-delete-value: 1
-      logic-not-delete-value: 0
   configuration:
+    # 开启驼峰命名转换
     map-underscore-to-camel-case: true
+    # 打印SQL日志
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
-jwt:
-  secret: FaceAttendance2026SecretKeyForJWTTokenGenerationAndValidation
-  expiration: 86400000
-
-face:
-  feature-length: 1024
-  similarity-threshold: 0.88
-  liveness-threshold: 0.72
-
+# 日志配置
 logging:
   level:
-    com.attendance: DEBUG
-    org.springframework.security: INFO
+    com.example.demo: debug
+    org.springframework: info
   pattern:
-    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+    console: '%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n'
+
+facemind:
+  face-service-url: http://127.0.0.1:8000/embed
+
+server:
+  max-http-request-header-size: 65536
+

@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录 - 人脸识别考勤系统</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --accent-color: #1abc9c;
+            --danger-color: #e74c3c;
+            --warning-color: #f39c12;
+            --success-color: #2ecc71;
+            --light-color: #ecf0f1;
+            --text-color: #333;
+            --text-light: #7f8c8d;
+            --border-color: #ddd;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .login-container {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 420px;
+            overflow: hidden;
+        }
+
+        .login-header {
+            background: var(--secondary-color);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .login-header .logo {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .login-header h1 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .login-header p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .login-body {
+            padding: 30px;
+        }
+
+        .tab-buttons {
+            display: flex;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            background: var(--light-color);
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-light);
+            transition: all 0.3s;
+        }
+
+        .tab-btn.active {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .tab-btn:hover:not(.active) {
+            background: #ddd;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text-color);
+        }
+
+        .form-group label .required {
+            color: var(--danger-color);
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        }
+
+        .btn {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.4);
+        }
+
+        .btn-accent {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .btn-accent:hover {
+            background: #16a085;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(26, 188, 156, 0.4);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .error-message {
+            color: var(--danger-color);
+            font-size: 0.85rem;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+
+        .success-info {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .success-info.show {
+            display: block;
+        }
+
+        .success-info h4 {
+            margin-bottom: 10px;
+        }
+
+        .success-info p {
+            margin: 5px 0;
+            font-size: 0.9rem;
+        }
+
+        .toast-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 9999;
+        }
+
+        .toast {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            padding: 15px 20px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            animation: slideIn 0.3s ease;
+        }
+
+        .toast.success {
+            border-left: 4px solid var(--success-color);
+        }
+
+        .toast.error {
+            border-left: 4px solid var(--danger-color);
+        }
+
+        .toast-icon {
+            margin-right: 12px;
+            font-size: 1.2rem;
+        }
+
+        .toast-message {
+            flex: 1;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .role-select-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .role-option {
+            flex: 1;
+            padding: 15px;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .role-option:hover {
+            border-color: var(--primary-color);
+        }
+
+        .role-option.selected {
+            border-color: var(--primary-color);
+            background: rgba(52, 152, 219, 0.1);
+        }
+
+        .role-option .icon {
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+
+        .role-option .label {
+            font-weight: 500;
+            color: var(--text-color);
+        }
+
+        .role-option input {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <div class="logo">FR</div>
+            <h1>人脸识别考勤系统</h1>
+            <p>Face Recognition Attendance System</p>
+        </div>
+
+        <div class="login-body">
+            <div class="tab-buttons">
+                <button class="tab-btn active" data-tab="login">登录</button>
+                <button class="tab-btn" data-tab="register">注册</button>
+            </div>
+
+            <!-- 登录表单 -->
+            <div class="tab-content active" id="login-tab">
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="login-username">用户名 <span class="required">*</span></label>
+                        <input type="text" id="login-username" name="username" placeholder="请输入用户名" required>
+                        <div class="error-message" id="login-username-error"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">密码 <span class="required">*</span></label>
+                        <input type="password" id="login-password" name="password" placeholder="请输入密码" required>
+                        <div class="error-message" id="login-password-error"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">登录</button>
+                </form>
+            </div>
+
+            <!-- 注册表单 -->
+            <div class="tab-content" id="register-tab">
+                <div class="success-info" id="register-success">
+                    <h4>🎉 注册成功！</h4>
+                    <p>您的<span id="success-role"></span>账号已创建</p>
+                    <p><strong>学号/工号：</strong><span id="success-number"></span></p>
+                    <p>请使用用户名和密码登录系统</p>
+                </div>
+
+                <form id="register-form">
+                    <div class="form-group">
+                        <label>选择角色 <span class="required">*</span></label>
+                        <div class="role-select-group">
+                            <label class="role-option" data-role="3">
+                                <input type="radio" name="roleId" value="3">
+                                <div class="label">学生</div>
+                            </label>
+                            <label class="role-option" data-role="2">
+                                <input type="radio" name="roleId" value="2">
+                                <div class="label">教师</div>
+                            </label>
+                        </div>
+                        <div class="error-message" id="role-error"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-username">用户名 <span class="required">*</span></label>
+                        <input type="text" id="reg-username" name="username" placeholder="请输入用户名" required>
+                        <div class="error-message" id="reg-username-error"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-password">密码 <span class="required">*</span></label>
+                        <input type="password" id="reg-password" name="password" placeholder="请输入密码（至少6位）" required>
+                        <div class="error-message" id="reg-password-error"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-realname">真实姓名 <span class="required">*</span></label>
+                        <input type="text" id="reg-realname" name="realName" placeholder="请输入真实姓名" required>
+                        <div class="error-message" id="reg-realname-error"></div>
+                    </div>
+                    <!-- 学生专用：班级选择 -->
+                    <div class="form-group" id="student-class-group" style="display: none;">
+                        <label for="reg-class">班级 <span class="required">*</span></label>
+                        <input type="text" id="reg-class" name="className" placeholder="请输入班级（如：计算机2501班）">
+                        <div class="error-message" id="reg-class-error"></div>
+                    </div>
+                    <!-- 教师专用：授课课程输入 -->
+                    <div class="form-group" id="teacher-course-group" style="display: none;">
+                        <label for="reg-course">授课课程 <span class="required">*</span></label>
+                        <input type="text" id="reg-course" name="courseName" placeholder="请输入授课课程名称，如：软件工程">
+                        <div class="error-message" id="reg-course-error"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-phone">手机号</label>
+                        <input type="tel" id="reg-phone" name="phoneNumber" placeholder="请输入手机号（选填）">
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-email">邮箱</label>
+                        <input type="email" id="reg-email" name="email" placeholder="请输入邮箱（选填）">
+                    </div>
+                    <button type="submit" class="btn btn-accent">注册</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- 测试账号提示（仅登录Tab显示） -->
+    <div id="test-accounts" style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.85); color: #fff; padding: 15px 25px; border-radius: 8px; font-size: 13px; z-index: 9999; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+        <div style="font-weight: bold; margin-bottom: 8px; color: #4fd1c5;">📋 测试账号</div>
+        <div style="display: flex; gap: 30px;">
+            <div><span style="color: #a0aec0;">管理员：</span>admin / admin123</div>
+        </div>
+    </div>
+
+    <div class="toast-container" id="toast-container"></div>
+
+    <script src="js/api.js"></script>
+    <script>
+        // Toast提示
+        function showToast(message, type) {
+            type = type || 'success';
+            var container = document.getElementById('toast-container');
+            var toast = document.createElement('div');
+            toast.className = 'toast ' + type;
+            toast.innerHTML = '<div class="toast-icon">' + (type === 'success' ? '✅' : '❌') + '</div>' +
+                '<div class="toast-message">' + message + '</div>';
+            container.appendChild(toast);
+            setTimeout(function() { toast.remove(); }, 3000);
+        }
+
+        // Tab切换
+        var tabBtns = document.querySelectorAll('.tab-btn');
+        var testAccountsDiv = document.getElementById('test-accounts');
+        tabBtns.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var self = this;
+                tabBtns.forEach(function(b) { b.classList.remove('active'); });
+                document.querySelectorAll('.tab-content').forEach(function(c) { c.classList.remove('active'); });
+                self.classList.add('active');
+                document.getElementById(self.dataset.tab + '-tab').classList.add('active');
+                
+                // 登录Tab显示测试账号，注册Tab隐藏
+                if (self.dataset.tab === 'login') {
+                    testAccountsDiv.style.display = 'block';
+                } else {
+                    testAccountsDiv.style.display = 'none';
+                }
+            });
+        });
+
+        // 角色选择
+        var roleOptions = document.querySelectorAll('.role-option');
+        roleOptions.forEach(function(option) {
+            option.addEventListener('click', function() {
+                var self = this;
+                roleOptions.forEach(function(o) { o.classList.remove('selected'); });
+                self.classList.add('selected');
+                self.querySelector('input').checked = true;
+                
+                // 根据角色显示/隐藏对应字段
+                var roleId = self.dataset.role;
+                var studentClassGroup = document.getElementById('student-class-group');
+                var teacherCourseGroup = document.getElementById('teacher-course-group');
+                
+                if (roleId === '3') {
+                    // 学生：显示班级，隐藏课程
+                    studentClassGroup.style.display = 'block';
+                    teacherCourseGroup.style.display = 'none';
+                } else if (roleId === '2') {
+                    // 教师：显示课程，隐藏班级
+                    studentClassGroup.style.display = 'none';
+                    teacherCourseGroup.style.display = 'block';
+                } else {
+                    studentClassGroup.style.display = 'none';
+                    teacherCourseGroup.style.display = 'none';
+                }
+            });
+        });
+
+        // 登录表单提交
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            var username = document.getElementById('login-username').value.trim();
+            var password = document.getElementById('login-password').value;
+
+            if (!username) {
+                document.getElementById('login-username-error').textContent = '请输入用户名';
+                document.getElementById('login-username-error').classList.add('show');
+                return;
+            }
+            if (!password) {
+                document.getElementById('login-password-error').textContent = '请输入密码';
+                document.getElementById('login-password-error').classList.add('show');
+                return;
+            }
+
+            UserAPI.login(username, password)
+                .then(function(data) {
+                    localStorage.setItem('currentUser', JSON.stringify(data));
+                    showToast('登录成功！');
+                    setTimeout(function() {
+                        window.location.href = '/index.html';
+                    }, 1000);
+                })
+                .catch(function(error) {
+                    showToast(error.message || '登录失败', 'error');
+                    console.error('Login error:', error);
+                });
+        });
+
+        // 注册表单提交
+        document.getElementById('register-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            var roleInput = document.querySelector('input[name="roleId"]:checked');
+            var username = document.getElementById('reg-username').value.trim();
+            var password = document.getElementById('reg-password').value;
+            var realName = document.getElementById('reg-realname').value.trim();
+            var phoneNumber = document.getElementById('reg-phone').value.trim();
+            var email = document.getElementById('reg-email').value.trim();
+
+            // 验证
+            var hasError = false;
+
+            if (!roleInput) {
+                document.getElementById('role-error').textContent = '请选择角色';
+                document.getElementById('role-error').classList.add('show');
+                hasError = true;
+            } else {
+                document.getElementById('role-error').classList.remove('show');
+            }
+
+            if (!username) {
+                document.getElementById('reg-username-error').textContent = '请输入用户名';
+                document.getElementById('reg-username-error').classList.add('show');
+                hasError = true;
+            } else {
+                document.getElementById('reg-username-error').classList.remove('show');
+            }
+
+            if (!password || password.length < 6) {
+                document.getElementById('reg-password-error').textContent = '密码至少6位';
+                document.getElementById('reg-password-error').classList.add('show');
+                hasError = true;
+            } else {
+                document.getElementById('reg-password-error').classList.remove('show');
+            }
+
+            if (!realName) {
+                document.getElementById('reg-realname-error').textContent = '请输入真实姓名';
+                document.getElementById('reg-realname-error').classList.add('show');
+                hasError = true;
+            } else {
+                document.getElementById('reg-realname-error').classList.remove('show');
+            }
+
+            // 学生必须填写班级
+            var className = document.getElementById('reg-class').value.trim();
+            if (roleInput && roleInput.value === '3' && !className) {
+                document.getElementById('reg-class-error').textContent = '请输入班级';
+                document.getElementById('reg-class-error').classList.add('show');
+                hasError = true;
+            } else {
+                document.getElementById('reg-class-error').classList.remove('show');
+            }
+
+            // 教师必须填写授课课程名称
+            var courseName = document.getElementById('reg-course').value.trim();
+            if (roleInput && roleInput.value === '2' && !courseName) {
+                document.getElementById('reg-course-error').textContent = '请输入授课课程名称';
+                document.getElementById('reg-course-error').classList.add('show');
+                hasError = true;
+            } else {
+                document.getElementById('reg-course-error').classList.remove('show');
+            }
+
+            if (hasError) return;
+
+            var registerData = {
+                username: username,
+                password: password,
+                realName: realName,
+                phoneNumber: phoneNumber,
+                email: email,
+                roleId: parseInt(roleInput.value)
+            };
+            
+            // 学生添加班级
+            if (roleInput.value === '3') {
+                registerData.className = className;
+            }
+            // 教师添加课程名称（目前仅前端传递，后端暂不使用）
+            if (roleInput.value === '2') {
+                registerData.courseName = courseName;
+            }
+
+            UserAPI.register(registerData)
+            .then(function(data) {
+                document.getElementById('success-role').textContent = data.roleName;
+                document.getElementById('success-number').textContent = data.studentNumber || data.jobNumber;
+                document.getElementById('register-success').classList.add('show');
+                document.getElementById('register-form').style.display = 'none';
+                showToast('注册成功！');
+                
+                setTimeout(function() {
+                    document.querySelector('.tab-btn[data-tab="login"]').click();
+                    document.getElementById('register-success').classList.remove('show');
+                    document.getElementById('register-form').style.display = 'block';
+                    document.getElementById('register-form').reset();
+                    roleOptions.forEach(function(o) { o.classList.remove('selected'); });
+                }, 3000);
+            })
+            .catch(function(error) {
+                showToast(error.message || '注册失败', 'error');
+                console.error('Register error:', error);
+            });
+        });
+
+        // 清除错误提示
+        document.querySelectorAll('input').forEach(function(input) {
+            input.addEventListener('input', function() {
+                var errorEl = document.getElementById(this.id + '-error');
+                if (errorEl) errorEl.classList.remove('show');
+            });
+        });
+
+        // 检查是否已登录
+        var currentUser = localStorage.getItem('currentUser');
+        if (currentUser) {
+            window.location.href = '/index.html';
+        }
+    </script>
+</body>
+
+</html>

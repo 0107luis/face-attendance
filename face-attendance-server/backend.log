@@ -1,0 +1,424 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< com.attendance:face-attendance-server >----------------
+[INFO] Building Face Attendance Server 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:2.7.18:run (default-cli) > test-compile @ face-attendance-server >>>
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ face-attendance-server ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ face-attendance-server ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.2.0:testResources (default-testResources) @ face-attendance-server ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory C:\Users\31052\Desktop\人脸识别\face-attendance-server\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.10.1:testCompile (default-testCompile) @ face-attendance-server ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 4 source files to C:\Users\31052\Desktop\人脸识别\face-attendance-server\target\test-classes
+[INFO] 
+[INFO] <<< spring-boot:2.7.18:run (default-cli) < test-compile @ face-attendance-server <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:2.7.18:run (default-cli) @ face-attendance-server ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::               (v2.7.18)
+
+2026-03-02 16:31:52 [main] INFO  c.a.FaceAttendanceApplication - Starting FaceAttendanceApplication using Java 11.0.12 on luis with PID 25340 (C:\Users\31052\Desktop\人脸识别\face-attendance-server\target\classes started by 31052 in C:\Users\31052\Desktop\人脸识别\face-attendance-server)
+2026-03-02 16:31:52 [main] DEBUG c.a.FaceAttendanceApplication - Running with Spring Boot v2.7.18, Spring v5.3.31
+2026-03-02 16:31:52 [main] INFO  c.a.FaceAttendanceApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-02 16:31:52 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-03-02 16:31:52 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-03-02 16:31:52 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2026-03-02 16:31:53 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8085 (http)
+2026-03-02 16:31:53 [main] INFO  o.a.c.core.AprLifecycleListener - Loaded Apache Tomcat Native library [2.0.8] using APR version [1.7.4].
+2026-03-02 16:31:53 [main] INFO  o.a.c.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2026-03-02 16:31:53 [main] INFO  o.a.c.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2026-03-02 16:31:53 [main] INFO  o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+2026-03-02 16:31:53 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-02 16:31:53 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.83]
+2026-03-02 16:31:53 [main] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2026-03-02 16:31:53 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1254 ms
+Logging initialized using 'class org.apache.ibatis.logging.stdout.StdOutImpl' adapter.
+Initialization Sequence datacenterId:29 workerId:5
+ _ _   |_  _ _|_. ___ _ |    _ 
+| | |\/|_)(_| | |_\  |_)||_|_\ 
+     /               |         
+                        3.5.5 
+2026-03-02 16:31:54 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5ebf776c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7fd3fd06, org.springframework.security.web.context.SecurityContextPersistenceFilter@4acc27fd, org.springframework.security.web.header.HeaderWriterFilter@81a8898, org.springframework.web.filter.CorsFilter@54ae1240, org.springframework.security.web.authentication.logout.LogoutFilter@5383bf08, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@61bf405d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@464d5365, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1c2b65cc, org.springframework.security.web.session.SessionManagementFilter@6d6712b7, org.springframework.security.web.access.ExceptionTranslationFilter@511de4dd, org.springframework.security.web.access.intercept.AuthorizationFilter@62dc1203]
+2026-03-02 16:31:54 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8085 (http) with context path '/api'
+2026-03-02 16:31:54 [main] INFO  o.s.a.r.c.CachingConnectionFactory - Attempting to connect to: [localhost:5672]
+2026-03-02 16:31:54 [main] INFO  o.s.a.r.c.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#39f93225:0/SimpleConnection@c8531b9 [delegate=amqp://root@127.0.0.1:5672/, localPort= 6428]
+2026-03-02 16:31:55 [main] INFO  c.a.FaceAttendanceApplication - Started FaceAttendanceApplication in 3.237 seconds (JVM running for 3.486)
+2026-03-02 16:32:12 [http-nio-8085-exec-1] INFO  o.a.c.c.C.[.[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-02 16:32:12 [http-nio-8085-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-03-02 16:32:12 [http-nio-8085-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4fe167d9] was not registered for synchronization because synchronization is not active
+2026-03-02 16:32:12 [http-nio-8085-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-02 16:32:12 [http-nio-8085-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+JDBC Connection [HikariProxyConnection@942313883 wrapping com.mysql.cj.jdbc.ConnectionImpl@7e141c3c] will not be managed by Spring
+==>  Preparing: SELECT * FROM sys_user WHERE username = ? AND deleted = 0
+==> Parameters: user1(String)
+<==    Columns: id, username, password, real_name, phone, email, department, employee_no, status, create_time, update_time, deleted
+<==        Row: 4, user1, $2a$10$j9rHgWIn6VO3dPhgfohuS.nCiq7OMZLBGUCWdaKKRon7RXcRO51v2, null, null, null, null, null, 1, 2026-03-02 15:06:58, 2026-03-02 15:06:58, 0
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4fe167d9]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1c01aa91] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@314984289 wrapping com.mysql.cj.jdbc.ConnectionImpl@7e141c3c] will not be managed by Spring
+==>  Preparing: SELECT * FROM sys_user WHERE username = ? AND deleted = 0
+==> Parameters: user1(String)
+<==    Columns: id, username, password, real_name, phone, email, department, employee_no, status, create_time, update_time, deleted
+<==        Row: 4, user1, $2a$10$j9rHgWIn6VO3dPhgfohuS.nCiq7OMZLBGUCWdaKKRon7RXcRO51v2, null, null, null, null, null, 1, 2026-03-02 15:06:58, 2026-03-02 15:06:58, 0
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1c01aa91]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5057f44] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1742675084 wrapping com.mysql.cj.jdbc.ConnectionImpl@7e141c3c] will not be managed by Spring
+==>  Preparing: SELECT COUNT(*) AS total FROM sys_user WHERE deleted = 0
+==> Parameters: 
+<==    Columns: total
+<==        Row: 6
+<==      Total: 1
+==>  Preparing: SELECT id,username,password,real_name,phone,email,department,employee_no,status,create_time,update_time,deleted FROM sys_user WHERE deleted=0 ORDER BY create_time DESC LIMIT ?
+==> Parameters: 10(Long)
+<==    Columns: id, username, password, real_name, phone, email, department, employee_no, status, create_time, update_time, deleted
+<==        Row: 6, luis, $2a$10$orxowNj5vpV0YqfLEcveoesYlNvUv88TynCh6vff1.63SQJAua8cW, chen, , , 董事长, 1, 1, 2026-03-02 16:18:49, 2026-03-02 16:18:49, 0
+<==        Row: 5, testuser1772435648823, $2a$10$AIMUQfj2sZr0c/lNLZT.LOyNDRUqIG/UTQ4FXPF2p.VNdTMmYNEqi, 测试用户, null, null, 技术部, EMP1772435648824, 1, 2026-03-02 15:14:08, 2026-03-02 15:14:08, 0
+<==        Row: 4, user1, $2a$10$j9rHgWIn6VO3dPhgfohuS.nCiq7OMZLBGUCWdaKKRon7RXcRO51v2, null, null, null, null, null, 1, 2026-03-02 15:06:58, 2026-03-02 15:06:58, 0
+<==        Row: 3, testuser1772431206143, $2a$10$Ku1c2AVUzU99wtdrZoEtpOMMm6N2GD8thH/TC4n0MYGGJMPYfSdLq, 测试用户, null, null, 技术部, EMP1772431206158, 1, 2026-03-02 14:00:06, 2026-03-02 14:00:06, 0
+<==        Row: 2, testuser1772428973751, $2a$10$yaLY9HDaq4HOKf/LfCeY0.K73pSLXWs3ovE9DgXkDPl8LLuBhMzMy, 测试用户, null, null, 技术部, EMP1772428973751, 1, 2026-03-02 13:22:53, 2026-03-02 13:22:53, 0
+<==        Row: 1, admin, $2a$10$N9qo8uLOickgx2ZMRZoMyeIjZRGdjGj/n3.uqrG0MCcP.VRd9H1BC, 管理员, 13800138000, admin@company.com, 技术部, EMP001, 1, 2026-03-02 13:21:37, 2026-03-02 13:21:37, 0
+<==      Total: 6
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5057f44]
+2026-03-02 16:47:44 [http-nio-8085-exec-7] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'startDate' for method parameter type LocalDate is not present]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@69cb8039] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1664346953 wrapping com.mysql.cj.jdbc.ConnectionImpl@7e141c3c] will not be managed by Spring
+==>  Preparing: SELECT COUNT(*) AS total FROM sys_user WHERE deleted = 0
+==> Parameters: 
+<==    Columns: total
+<==        Row: 6
+<==      Total: 1
+==>  Preparing: SELECT id,username,password,real_name,phone,email,department,employee_no,status,create_time,update_time,deleted FROM sys_user WHERE deleted=0 ORDER BY create_time DESC LIMIT ?
+==> Parameters: 10(Long)
+<==    Columns: id, username, password, real_name, phone, email, department, employee_no, status, create_time, update_time, deleted
+<==        Row: 6, luis, $2a$10$orxowNj5vpV0YqfLEcveoesYlNvUv88TynCh6vff1.63SQJAua8cW, chen, , , 董事长, 1, 1, 2026-03-02 16:18:49, 2026-03-02 16:18:49, 0
+<==        Row: 5, testuser1772435648823, $2a$10$AIMUQfj2sZr0c/lNLZT.LOyNDRUqIG/UTQ4FXPF2p.VNdTMmYNEqi, 测试用户, null, null, 技术部, EMP1772435648824, 1, 2026-03-02 15:14:08, 2026-03-02 15:14:08, 0
+<==        Row: 4, user1, $2a$10$j9rHgWIn6VO3dPhgfohuS.nCiq7OMZLBGUCWdaKKRon7RXcRO51v2, null, null, null, null, null, 1, 2026-03-02 15:06:58, 2026-03-02 15:06:58, 0
+<==        Row: 3, testuser1772431206143, $2a$10$Ku1c2AVUzU99wtdrZoEtpOMMm6N2GD8thH/TC4n0MYGGJMPYfSdLq, 测试用户, null, null, 技术部, EMP1772431206158, 1, 2026-03-02 14:00:06, 2026-03-02 14:00:06, 0
+<==        Row: 2, testuser1772428973751, $2a$10$yaLY9HDaq4HOKf/LfCeY0.K73pSLXWs3ovE9DgXkDPl8LLuBhMzMy, 测试用户, null, null, 技术部, EMP1772428973751, 1, 2026-03-02 13:22:53, 2026-03-02 13:22:53, 0
+<==        Row: 1, admin, $2a$10$N9qo8uLOickgx2ZMRZoMyeIjZRGdjGj/n3.uqrG0MCcP.VRd9H1BC, 管理员, 13800138000, admin@company.com, 技术部, EMP001, 1, 2026-03-02 13:21:37, 2026-03-02 13:21:37, 0
+<==      Total: 6
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@69cb8039]
+2026-03-02 16:47:50 [http-nio-8085-exec-10] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'startDate' for method parameter type LocalDate is not present]
+2026-03-02 16:47:51 [http-nio-8085-exec-9] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'startDate' for method parameter type LocalDate is not present]
+2026-03-02 16:47:52 [http-nio-8085-exec-1] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'startDate' for method parameter type LocalDate is not present]
+2026-03-02 16:47:53 [http-nio-8085-exec-2] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'startDate' for method parameter type LocalDate is not present]
+2026-03-02 16:47:53 [http-nio-8085-exec-3] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'startDate' for method parameter type LocalDate is not present]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7abd6eb9] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@867206191 wrapping com.mysql.cj.jdbc.ConnectionImpl@7e141c3c] will not be managed by Spring
+==>  Preparing: SELECT COUNT(*) AS total FROM attendance_appeal WHERE deleted = 0
+==> Parameters: 
+<==    Columns: total
+<==        Row: 3
+<==      Total: 1
+==>  Preparing: SELECT id,record_id,user_id,appeal_type,reason,attachment,status,reviewer,review_comment,review_time,create_time,update_time,deleted FROM attendance_appeal WHERE deleted=0 ORDER BY create_time DESC LIMIT ?
+==> Parameters: 10(Long)
+<==    Columns: id, record_id, user_id, appeal_type, reason, attachment, status, reviewer, review_comment, review_time, create_time, update_time, deleted
+<==        Row: 3, 1, 1, late, <<BLOB>>, null, 0, null, <<BLOB>>, null, 2026-03-02 15:14:08, 2026-03-02 15:14:08, 0
+<==        Row: 2, 1, 1, late, <<BLOB>>, null, 0, null, <<BLOB>>, null, 2026-03-02 14:00:06, 2026-03-02 14:00:06, 0
+<==        Row: 1, 1, 1, late, <<BLOB>>, null, 1, admin, <<BLOB>>, 2026-03-02 14:00:05, 2026-03-02 13:22:53, 2026-03-02 13:22:53, 0
+<==      Total: 3
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7abd6eb9]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@590cfdfe] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1408538254 wrapping com.mysql.cj.jdbc.ConnectionImpl@7e141c3c] will not be managed by Spring
+==>  Preparing: SELECT COUNT(*) AS total FROM attendance_appeal WHERE deleted = 0
+==> Parameters: 
+<==    Columns: total
+<==        Row: 3
+<==      Total: 1
+==>  Preparing: SELECT id,record_id,user_id,appeal_type,reason,attachment,status,reviewer,review_comment,review_time,create_time,update_time,deleted FROM attendance_appeal WHERE deleted=0 ORDER BY create_time DESC LIMIT ?
+==> Parameters: 10(Long)
+<==    Columns: id, record_id, user_id, appeal_type, reason, attachment, status, reviewer, review_comment, review_time, create_time, update_time, deleted
+<==        Row: 3, 1, 1, late, <<BLOB>>, null, 0, null, <<BLOB>>, null, 2026-03-02 15:14:08, 2026-03-02 15:14:08, 0
+<==        Row: 2, 1, 1, late, <<BLOB>>, null, 0, null, <<BLOB>>, null, 2026-03-02 14:00:06, 2026-03-02 14:00:06, 0
+<==        Row: 1, 1, 1, late, <<BLOB>>, null, 1, admin, <<BLOB>>, 2026-03-02 14:00:05, 2026-03-02 13:22:53, 2026-03-02 13:22:53, 0
+<==      Total: 3
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@590cfdfe]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1c809af8] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@693103691 wrapping com.mysql.cj.jdbc.ConnectionImpl@7e141c3c] will not be managed by Spring
+==>  Preparing: SELECT COUNT(*) AS total FROM attendance_appeal WHERE deleted = 0
+==> Parameters: 
+<==    Columns: total
+<==        Row: 3
+<==      Total: 1
+==>  Preparing: SELECT id,record_id,user_id,appeal_type,reason,attachment,status,reviewer,review_comment,review_time,create_time,update_time,deleted FROM attendance_appeal WHERE deleted=0 ORDER BY create_time DESC LIMIT ?
+==> Parameters: 10(Long)
+<==    Columns: id, record_id, user_id, appeal_type, reason, attachment, status, reviewer, review_comment, review_time, create_time, update_time, deleted
+<==        Row: 3, 1, 1, late, <<BLOB>>, null, 0, null, <<BLOB>>, null, 2026-03-02 15:14:08, 2026-03-02 15:14:08, 0
+<==        Row: 2, 1, 1, late, <<BLOB>>, null, 0, null, <<BLOB>>, null, 2026-03-02 14:00:06, 2026-03-02 14:00:06, 0
+<==        Row: 1, 1, 1, late, <<BLOB>>, null, 1, admin, <<BLOB>>, 2026-03-02 14:00:05, 2026-03-02 13:22:53, 2026-03-02 13:22:53, 0
+<==      Total: 3
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1c809af8]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@652b3f3c] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@795098906 wrapping com.mysql.cj.jdbc.ConnectionImpl@7e141c3c] will not be managed by Spring
+==>  Preparing: SELECT COUNT(*) AS total FROM attendance_appeal WHERE deleted = 0
+==> Parameters: 
+<==    Columns: total
+<==        Row: 3
+<==      Total: 1
+==>  Preparing: SELECT id,record_id,user_id,appeal_type,reason,attachment,status,reviewer,review_comment,review_time,create_time,update_time,deleted FROM attendance_appeal WHERE deleted=0 ORDER BY create_time DESC LIMIT ?
+==> Parameters: 10(Long)
+<==    Columns: id, record_id, user_id, appeal_type, reason, attachment, status, reviewer, review_comment, review_time, create_time, update_time, deleted
+<==        Row: 3, 1, 1, late, <<BLOB>>, null, 0, null, <<BLOB>>, null, 2026-03-02 15:14:08, 2026-03-02 15:14:08, 0
+<==        Row: 2, 1, 1, late, <<BLOB>>, null, 0, null, <<BLOB>>, null, 2026-03-02 14:00:06, 2026-03-02 14:00:06, 0
+<==        Row: 1, 1, 1, late, <<BLOB>>, null, 1, admin, <<BLOB>>, 2026-03-02 14:00:05, 2026-03-02 13:22:53, 2026-03-02 13:22:53, 0
+<==      Total: 3
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@652b3f3c]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4250bca3] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1282904763 wrapping com.mysql.cj.jdbc.ConnectionImpl@7e141c3c] will not be managed by Spring
+==>  Preparing: SELECT COUNT(*) AS total FROM attendance_appeal WHERE deleted = 0
+==> Parameters: 
+<==    Columns: total
+<==        Row: 3
+<==      Total: 1
+==>  Preparing: SELECT id,record_id,user_id,appeal_type,reason,attachment,status,reviewer,review_comment,review_time,create_time,update_time,deleted FROM attendance_appeal WHERE deleted=0 ORDER BY create_time DESC LIMIT ?
+==> Parameters: 10(Long)
+<==    Columns: id, record_id, user_id, appeal_type, reason, attachment, status, reviewer, review_comment, review_time, create_time, update_time, deleted
+<==        Row: 3, 1, 1, late, <<BLOB>>, null, 0, null, <<BLOB>>, null, 2026-03-02 15:14:08, 2026-03-02 15:14:08, 0
+<==        Row: 2, 1, 1, late, <<BLOB>>, null, 0, null, <<BLOB>>, null, 2026-03-02 14:00:06, 2026-03-02 14:00:06, 0
+<==        Row: 1, 1, 1, late, <<BLOB>>, null, 1, admin, <<BLOB>>, 2026-03-02 14:00:05, 2026-03-02 13:22:53, 2026-03-02 13:22:53, 0
+<==      Total: 3
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4250bca3]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@51f20a88] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1527407096 wrapping com.mysql.cj.jdbc.ConnectionImpl@7e141c3c] will not be managed by Spring
+==>  Preparing: SELECT COUNT(*) AS total FROM attendance_appeal WHERE deleted = 0
+==> Parameters: 
+<==    Columns: total
+<==        Row: 3
+<==      Total: 1
+==>  Preparing: SELECT id,record_id,user_id,appeal_type,reason,attachment,status,reviewer,review_comment,review_time,create_time,update_time,deleted FROM attendance_appeal WHERE deleted=0 ORDER BY create_time DESC LIMIT ?
+==> Parameters: 10(Long)
+<==    Columns: id, record_id, user_id, appeal_type, reason, attachment, status, reviewer, review_comment, review_time, create_time, update_time, deleted
+<==        Row: 3, 1, 1, late, <<BLOB>>, null, 0, null, <<BLOB>>, null, 2026-03-02 15:14:08, 2026-03-02 15:14:08, 0
+<==        Row: 2, 1, 1, late, <<BLOB>>, null, 0, null, <<BLOB>>, null, 2026-03-02 14:00:06, 2026-03-02 14:00:06, 0
+<==        Row: 1, 1, 1, late, <<BLOB>>, null, 1, admin, <<BLOB>>, 2026-03-02 14:00:05, 2026-03-02 13:22:53, 2026-03-02 13:22:53, 0
+<==      Total: 3
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@51f20a88]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6bb6bd23] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1632556627 wrapping com.mysql.cj.jdbc.ConnectionImpl@7e141c3c] will not be managed by Spring
+==>  Preparing: SELECT COUNT(*) AS total FROM sys_user WHERE deleted = 0
+==> Parameters: 
+<==    Columns: total
+<==        Row: 6
+<==      Total: 1
+==>  Preparing: SELECT id,username,password,real_name,phone,email,department,employee_no,status,create_time,update_time,deleted FROM sys_user WHERE deleted=0 ORDER BY create_time DESC LIMIT ?
+==> Parameters: 10(Long)
+<==    Columns: id, username, password, real_name, phone, email, department, employee_no, status, create_time, update_time, deleted
+<==        Row: 6, luis, $2a$10$orxowNj5vpV0YqfLEcveoesYlNvUv88TynCh6vff1.63SQJAua8cW, chen, , , 董事长, 1, 1, 2026-03-02 16:18:49, 2026-03-02 16:18:49, 0
+<==        Row: 5, testuser1772435648823, $2a$10$AIMUQfj2sZr0c/lNLZT.LOyNDRUqIG/UTQ4FXPF2p.VNdTMmYNEqi, 测试用户, null, null, 技术部, EMP1772435648824, 1, 2026-03-02 15:14:08, 2026-03-02 15:14:08, 0
+<==        Row: 4, user1, $2a$10$j9rHgWIn6VO3dPhgfohuS.nCiq7OMZLBGUCWdaKKRon7RXcRO51v2, null, null, null, null, null, 1, 2026-03-02 15:06:58, 2026-03-02 15:06:58, 0
+<==        Row: 3, testuser1772431206143, $2a$10$Ku1c2AVUzU99wtdrZoEtpOMMm6N2GD8thH/TC4n0MYGGJMPYfSdLq, 测试用户, null, null, 技术部, EMP1772431206158, 1, 2026-03-02 14:00:06, 2026-03-02 14:00:06, 0
+<==        Row: 2, testuser1772428973751, $2a$10$yaLY9HDaq4HOKf/LfCeY0.K73pSLXWs3ovE9DgXkDPl8LLuBhMzMy, 测试用户, null, null, 技术部, EMP1772428973751, 1, 2026-03-02 13:22:53, 2026-03-02 13:22:53, 0
+<==        Row: 1, admin, $2a$10$N9qo8uLOickgx2ZMRZoMyeIjZRGdjGj/n3.uqrG0MCcP.VRd9H1BC, 管理员, 13800138000, admin@company.com, 技术部, EMP001, 1, 2026-03-02 13:21:37, 2026-03-02 13:21:37, 0
+<==      Total: 6
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6bb6bd23]
+2026-03-02 16:48:13 [http-nio-8085-exec-1] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'startDate' for method parameter type LocalDate is not present]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@53fb4d5a] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1659017983 wrapping com.mysql.cj.jdbc.ConnectionImpl@7e141c3c] will not be managed by Spring
+==>  Preparing: SELECT COUNT(*) AS total FROM sys_user WHERE deleted = 0
+==> Parameters: 
+<==    Columns: total
+<==        Row: 6
+<==      Total: 1
+==>  Preparing: SELECT id,username,password,real_name,phone,email,department,employee_no,status,create_time,update_time,deleted FROM sys_user WHERE deleted=0 ORDER BY create_time DESC LIMIT ?
+==> Parameters: 10(Long)
+<==    Columns: id, username, password, real_name, phone, email, department, employee_no, status, create_time, update_time, deleted
+<==        Row: 6, luis, $2a$10$orxowNj5vpV0YqfLEcveoesYlNvUv88TynCh6vff1.63SQJAua8cW, chen, , , 董事长, 1, 1, 2026-03-02 16:18:49, 2026-03-02 16:18:49, 0
+<==        Row: 5, testuser1772435648823, $2a$10$AIMUQfj2sZr0c/lNLZT.LOyNDRUqIG/UTQ4FXPF2p.VNdTMmYNEqi, 测试用户, null, null, 技术部, EMP1772435648824, 1, 2026-03-02 15:14:08, 2026-03-02 15:14:08, 0
+<==        Row: 4, user1, $2a$10$j9rHgWIn6VO3dPhgfohuS.nCiq7OMZLBGUCWdaKKRon7RXcRO51v2, null, null, null, null, null, 1, 2026-03-02 15:06:58, 2026-03-02 15:06:58, 0
+<==        Row: 3, testuser1772431206143, $2a$10$Ku1c2AVUzU99wtdrZoEtpOMMm6N2GD8thH/TC4n0MYGGJMPYfSdLq, 测试用户, null, null, 技术部, EMP1772431206158, 1, 2026-03-02 14:00:06, 2026-03-02 14:00:06, 0
+<==        Row: 2, testuser1772428973751, $2a$10$yaLY9HDaq4HOKf/LfCeY0.K73pSLXWs3ovE9DgXkDPl8LLuBhMzMy, 测试用户, null, null, 技术部, EMP1772428973751, 1, 2026-03-02 13:22:53, 2026-03-02 13:22:53, 0
+<==        Row: 1, admin, $2a$10$N9qo8uLOickgx2ZMRZoMyeIjZRGdjGj/n3.uqrG0MCcP.VRd9H1BC, 管理员, 13800138000, admin@company.com, 技术部, EMP001, 1, 2026-03-02 13:21:37, 2026-03-02 13:21:37, 0
+<==      Total: 6
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@53fb4d5a]
+2026-03-02 16:52:14 [http-nio-8085-exec-3] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'startDate' for method parameter type LocalDate is not present]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6614ea22] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@2088763788 wrapping com.mysql.cj.jdbc.ConnectionImpl@7e141c3c] will not be managed by Spring
+==>  Preparing: SELECT COUNT(*) AS total FROM attendance_appeal WHERE deleted = 0
+==> Parameters: 
+<==    Columns: total
+<==        Row: 3
+<==      Total: 1
+==>  Preparing: SELECT id,record_id,user_id,appeal_type,reason,attachment,status,reviewer,review_comment,review_time,create_time,update_time,deleted FROM attendance_appeal WHERE deleted=0 ORDER BY create_time DESC LIMIT ?
+==> Parameters: 10(Long)
+<==    Columns: id, record_id, user_id, appeal_type, reason, attachment, status, reviewer, review_comment, review_time, create_time, update_time, deleted
+<==        Row: 3, 1, 1, late, <<BLOB>>, null, 0, null, <<BLOB>>, null, 2026-03-02 15:14:08, 2026-03-02 15:14:08, 0
+<==        Row: 2, 1, 1, late, <<BLOB>>, null, 0, null, <<BLOB>>, null, 2026-03-02 14:00:06, 2026-03-02 14:00:06, 0
+<==        Row: 1, 1, 1, late, <<BLOB>>, null, 1, admin, <<BLOB>>, 2026-03-02 14:00:05, 2026-03-02 13:22:53, 2026-03-02 13:22:53, 0
+<==      Total: 3
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6614ea22]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@272a1563] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1993997787 wrapping com.mysql.cj.jdbc.ConnectionImpl@7e141c3c] will not be managed by Spring
+==>  Preparing: SELECT COUNT(*) AS total FROM attendance_appeal WHERE deleted = 0
+==> Parameters: 
+<==    Columns: total
+<==        Row: 3
+<==      Total: 1
+==>  Preparing: SELECT id,record_id,user_id,appeal_type,reason,attachment,status,reviewer,review_comment,review_time,create_time,update_time,deleted FROM attendance_appeal WHERE deleted=0 ORDER BY create_time DESC LIMIT ?
+==> Parameters: 10(Long)
+<==    Columns: id, record_id, user_id, appeal_type, reason, attachment, status, reviewer, review_comment, review_time, create_time, update_time, deleted
+<==        Row: 3, 1, 1, late, <<BLOB>>, null, 0, null, <<BLOB>>, null, 2026-03-02 15:14:08, 2026-03-02 15:14:08, 0
+<==        Row: 2, 1, 1, late, <<BLOB>>, null, 0, null, <<BLOB>>, null, 2026-03-02 14:00:06, 2026-03-02 14:00:06, 0
+<==        Row: 1, 1, 1, late, <<BLOB>>, null, 1, admin, <<BLOB>>, 2026-03-02 14:00:05, 2026-03-02 13:22:53, 2026-03-02 13:22:53, 0
+<==      Total: 3
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@272a1563]
+2026-03-02 16:52:22 [http-nio-8085-exec-8] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'startDate' for method parameter type LocalDate is not present]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@55e3b34] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1867698557 wrapping com.mysql.cj.jdbc.ConnectionImpl@7e141c3c] will not be managed by Spring
+==>  Preparing: SELECT COUNT(*) AS total FROM sys_user WHERE deleted = 0
+==> Parameters: 
+<==    Columns: total
+<==        Row: 6
+<==      Total: 1
+==>  Preparing: SELECT id,username,password,real_name,phone,email,department,employee_no,status,create_time,update_time,deleted FROM sys_user WHERE deleted=0 ORDER BY create_time DESC LIMIT ?
+==> Parameters: 10(Long)
+<==    Columns: id, username, password, real_name, phone, email, department, employee_no, status, create_time, update_time, deleted
+<==        Row: 6, luis, $2a$10$orxowNj5vpV0YqfLEcveoesYlNvUv88TynCh6vff1.63SQJAua8cW, chen, , , 董事长, 1, 1, 2026-03-02 16:18:49, 2026-03-02 16:18:49, 0
+<==        Row: 5, testuser1772435648823, $2a$10$AIMUQfj2sZr0c/lNLZT.LOyNDRUqIG/UTQ4FXPF2p.VNdTMmYNEqi, 测试用户, null, null, 技术部, EMP1772435648824, 1, 2026-03-02 15:14:08, 2026-03-02 15:14:08, 0
+<==        Row: 4, user1, $2a$10$j9rHgWIn6VO3dPhgfohuS.nCiq7OMZLBGUCWdaKKRon7RXcRO51v2, null, null, null, null, null, 1, 2026-03-02 15:06:58, 2026-03-02 15:06:58, 0
+<==        Row: 3, testuser1772431206143, $2a$10$Ku1c2AVUzU99wtdrZoEtpOMMm6N2GD8thH/TC4n0MYGGJMPYfSdLq, 测试用户, null, null, 技术部, EMP1772431206158, 1, 2026-03-02 14:00:06, 2026-03-02 14:00:06, 0
+<==        Row: 2, testuser1772428973751, $2a$10$yaLY9HDaq4HOKf/LfCeY0.K73pSLXWs3ovE9DgXkDPl8LLuBhMzMy, 测试用户, null, null, 技术部, EMP1772428973751, 1, 2026-03-02 13:22:53, 2026-03-02 13:22:53, 0
+<==        Row: 1, admin, $2a$10$N9qo8uLOickgx2ZMRZoMyeIjZRGdjGj/n3.uqrG0MCcP.VRd9H1BC, 管理员, 13800138000, admin@company.com, 技术部, EMP001, 1, 2026-03-02 13:21:37, 2026-03-02 13:21:37, 0
+<==      Total: 6
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@55e3b34]
+2026-03-02 16:53:20 [http-nio-8085-exec-6] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'startDate' for method parameter type LocalDate is not present]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5b06bc8a] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@595365794 wrapping com.mysql.cj.jdbc.ConnectionImpl@7e141c3c] will not be managed by Spring
+==>  Preparing: SELECT COUNT(*) AS total FROM sys_user WHERE deleted = 0
+==> Parameters: 
+<==    Columns: total
+<==        Row: 6
+<==      Total: 1
+==>  Preparing: SELECT id,username,password,real_name,phone,email,department,employee_no,status,create_time,update_time,deleted FROM sys_user WHERE deleted=0 ORDER BY create_time DESC LIMIT ?
+==> Parameters: 10(Long)
+<==    Columns: id, username, password, real_name, phone, email, department, employee_no, status, create_time, update_time, deleted
+<==        Row: 6, luis, $2a$10$orxowNj5vpV0YqfLEcveoesYlNvUv88TynCh6vff1.63SQJAua8cW, chen, , , 董事长, 1, 1, 2026-03-02 16:18:49, 2026-03-02 16:18:49, 0
+<==        Row: 5, testuser1772435648823, $2a$10$AIMUQfj2sZr0c/lNLZT.LOyNDRUqIG/UTQ4FXPF2p.VNdTMmYNEqi, 测试用户, null, null, 技术部, EMP1772435648824, 1, 2026-03-02 15:14:08, 2026-03-02 15:14:08, 0
+<==        Row: 4, user1, $2a$10$j9rHgWIn6VO3dPhgfohuS.nCiq7OMZLBGUCWdaKKRon7RXcRO51v2, null, null, null, null, null, 1, 2026-03-02 15:06:58, 2026-03-02 15:06:58, 0
+<==        Row: 3, testuser1772431206143, $2a$10$Ku1c2AVUzU99wtdrZoEtpOMMm6N2GD8thH/TC4n0MYGGJMPYfSdLq, 测试用户, null, null, 技术部, EMP1772431206158, 1, 2026-03-02 14:00:06, 2026-03-02 14:00:06, 0
+<==        Row: 2, testuser1772428973751, $2a$10$yaLY9HDaq4HOKf/LfCeY0.K73pSLXWs3ovE9DgXkDPl8LLuBhMzMy, 测试用户, null, null, 技术部, EMP1772428973751, 1, 2026-03-02 13:22:53, 2026-03-02 13:22:53, 0
+<==        Row: 1, admin, $2a$10$N9qo8uLOickgx2ZMRZoMyeIjZRGdjGj/n3.uqrG0MCcP.VRd9H1BC, 管理员, 13800138000, admin@company.com, 技术部, EMP001, 1, 2026-03-02 13:21:37, 2026-03-02 13:21:37, 0
+<==      Total: 6
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5b06bc8a]
+2026-03-02 17:00:00 [scheduling-1] INFO  c.a.task.AttendanceScheduledTask - 清理过期缓存...
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@728ee2cc] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@2136679953 wrapping com.mysql.cj.jdbc.ConnectionImpl@d91e36a] will not be managed by Spring
+==>  Preparing: SELECT COUNT(*) AS total FROM attendance_appeal WHERE deleted = 0
+==> Parameters: 
+<==    Columns: total
+<==        Row: 3
+<==      Total: 1
+==>  Preparing: SELECT id,record_id,user_id,appeal_type,reason,attachment,status,reviewer,review_comment,review_time,create_time,update_time,deleted FROM attendance_appeal WHERE deleted=0 ORDER BY create_time DESC LIMIT ?
+==> Parameters: 10(Long)
+<==    Columns: id, record_id, user_id, appeal_type, reason, attachment, status, reviewer, review_comment, review_time, create_time, update_time, deleted
+<==        Row: 3, 1, 1, late, <<BLOB>>, null, 0, null, <<BLOB>>, null, 2026-03-02 15:14:08, 2026-03-02 15:14:08, 0
+<==        Row: 2, 1, 1, late, <<BLOB>>, null, 0, null, <<BLOB>>, null, 2026-03-02 14:00:06, 2026-03-02 14:00:06, 0
+<==        Row: 1, 1, 1, late, <<BLOB>>, null, 1, admin, <<BLOB>>, 2026-03-02 14:00:05, 2026-03-02 13:22:53, 2026-03-02 13:22:53, 0
+<==      Total: 3
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@728ee2cc]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6b16ae3b] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1071959574 wrapping com.mysql.cj.jdbc.ConnectionImpl@d91e36a] will not be managed by Spring
+==>  Preparing: SELECT COUNT(*) AS total FROM attendance_appeal WHERE deleted = 0
+==> Parameters: 
+<==    Columns: total
+<==        Row: 3
+<==      Total: 1
+==>  Preparing: SELECT id,record_id,user_id,appeal_type,reason,attachment,status,reviewer,review_comment,review_time,create_time,update_time,deleted FROM attendance_appeal WHERE deleted=0 ORDER BY create_time DESC LIMIT ?
+==> Parameters: 10(Long)
+<==    Columns: id, record_id, user_id, appeal_type, reason, attachment, status, reviewer, review_comment, review_time, create_time, update_time, deleted
+<==        Row: 3, 1, 1, late, <<BLOB>>, null, 0, null, <<BLOB>>, null, 2026-03-02 15:14:08, 2026-03-02 15:14:08, 0
+<==        Row: 2, 1, 1, late, <<BLOB>>, null, 0, null, <<BLOB>>, null, 2026-03-02 14:00:06, 2026-03-02 14:00:06, 0
+<==        Row: 1, 1, 1, late, <<BLOB>>, null, 1, admin, <<BLOB>>, 2026-03-02 14:00:05, 2026-03-02 13:22:53, 2026-03-02 13:22:53, 0
+<==      Total: 3
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6b16ae3b]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3b938f38] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@148238449 wrapping com.mysql.cj.jdbc.ConnectionImpl@d91e36a] will not be managed by Spring
+==>  Preparing: SELECT COUNT(*) AS total FROM attendance_appeal WHERE deleted = 0
+==> Parameters: 
+<==    Columns: total
+<==        Row: 3
+<==      Total: 1
+==>  Preparing: SELECT id,record_id,user_id,appeal_type,reason,attachment,status,reviewer,review_comment,review_time,create_time,update_time,deleted FROM attendance_appeal WHERE deleted=0 ORDER BY create_time DESC LIMIT ?
+==> Parameters: 10(Long)
+<==    Columns: id, record_id, user_id, appeal_type, reason, attachment, status, reviewer, review_comment, review_time, create_time, update_time, deleted
+<==        Row: 3, 1, 1, late, <<BLOB>>, null, 0, null, <<BLOB>>, null, 2026-03-02 15:14:08, 2026-03-02 15:14:08, 0
+<==        Row: 2, 1, 1, late, <<BLOB>>, null, 0, null, <<BLOB>>, null, 2026-03-02 14:00:06, 2026-03-02 14:00:06, 0
+<==        Row: 1, 1, 1, late, <<BLOB>>, null, 1, admin, <<BLOB>>, 2026-03-02 14:00:05, 2026-03-02 13:22:53, 2026-03-02 13:22:53, 0
+<==      Total: 3
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3b938f38]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@27f1e0f5] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@755600261 wrapping com.mysql.cj.jdbc.ConnectionImpl@d91e36a] will not be managed by Spring
+==>  Preparing: SELECT COUNT(*) AS total FROM attendance_appeal WHERE deleted = 0
+==> Parameters: 
+<==    Columns: total
+<==        Row: 3
+<==      Total: 1
+==>  Preparing: SELECT id,record_id,user_id,appeal_type,reason,attachment,status,reviewer,review_comment,review_time,create_time,update_time,deleted FROM attendance_appeal WHERE deleted=0 ORDER BY create_time DESC LIMIT ?
+==> Parameters: 10(Long)
+<==    Columns: id, record_id, user_id, appeal_type, reason, attachment, status, reviewer, review_comment, review_time, create_time, update_time, deleted
+<==        Row: 3, 1, 1, late, <<BLOB>>, null, 0, null, <<BLOB>>, null, 2026-03-02 15:14:08, 2026-03-02 15:14:08, 0
+<==        Row: 2, 1, 1, late, <<BLOB>>, null, 0, null, <<BLOB>>, null, 2026-03-02 14:00:06, 2026-03-02 14:00:06, 0
+<==        Row: 1, 1, 1, late, <<BLOB>>, null, 1, admin, <<BLOB>>, 2026-03-02 14:00:05, 2026-03-02 13:22:53, 2026-03-02 13:22:53, 0
+<==      Total: 3
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@27f1e0f5]
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2b14de6e] was not registered for synchronization because synchronization is not active
+JDBC Connection [HikariProxyConnection@1746376758 wrapping com.mysql.cj.jdbc.ConnectionImpl@d91e36a] will not be managed by Spring
+==>  Preparing: SELECT COUNT(*) AS total FROM attendance_appeal WHERE deleted = 0
+==> Parameters: 
+<==    Columns: total
+<==        Row: 3
+<==      Total: 1
+==>  Preparing: SELECT id,record_id,user_id,appeal_type,reason,attachment,status,reviewer,review_comment,review_time,create_time,update_time,deleted FROM attendance_appeal WHERE deleted=0 ORDER BY create_time DESC LIMIT ?
+==> Parameters: 10(Long)
+<==    Columns: id, record_id, user_id, appeal_type, reason, attachment, status, reviewer, review_comment, review_time, create_time, update_time, deleted
+<==        Row: 3, 1, 1, late, <<BLOB>>, null, 0, null, <<BLOB>>, null, 2026-03-02 15:14:08, 2026-03-02 15:14:08, 0
+<==        Row: 2, 1, 1, late, <<BLOB>>, null, 0, null, <<BLOB>>, null, 2026-03-02 14:00:06, 2026-03-02 14:00:06, 0
+<==        Row: 1, 1, 1, late, <<BLOB>>, null, 1, admin, <<BLOB>>, 2026-03-02 14:00:05, 2026-03-02 13:22:53, 2026-03-02 13:22:53, 0
+<==      Total: 3
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2b14de6e]
+2026-03-02 17:30:00 [scheduling-1] INFO  c.a.task.AttendanceScheduledTask - 清理过期缓存...

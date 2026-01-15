@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * 人脸识别考勤系统 - 主程序入口
  * 
- * @author Your Name
+ * @author CYY
  * @version 1.0.0
  */
 @SpringBootApplication
